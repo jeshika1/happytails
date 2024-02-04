@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 20px 0; /* Adjust the top and bottom margin as needed */
+}
+
+
+.main {
+    width: 80%; /* Adjust the width as needed */
+    margin: 0 auto; /* This will center the div horizontally */
+    text-align: center; /* This will center the content inside the div */
+}
+
+.animal-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    background-color: #636363;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px; /* Add some space between the image and the button */
+}
+
+.btn-adopt {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745; /* Green color, you can change this */
+    color: #ffffff; /* White text */
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-adopt:hover {
+    background-color: #218838;
+}

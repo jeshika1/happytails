@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}addyours {% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/addyour.css' %}">
+{% endblock %}
+{% block body %}
+<body>
+
+    <h2>Add Your Pet</h2>
+
+    <form action="{% url 'addyour' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="petImage">Pet Image</label><br>
+        <input type="file" id="petImage" name="petImage" accept="image/*" required><br>
+
+        <label for="petName">Name:</label>
+        <input type="text" id="petName" name="petName" required><br>
+
+        <label for="petWeight">Weight:</label>
+        <input type="text" id="petWeight" name="petWeight" required><br>
+
+        <label for="petBreed">Breed:</label>
+        <input type="text" id="petBreed" name="petBreed" required><br>
+
+        <label>Vaccination Status:</label><br>
+        <input type="radio" id="vaccinated" name="vaccinationStatus" value="vaccinated" required>
+        <label for="vaccinated">Vaccinated</label><br>
+        <input type="radio" id="notVaccinated" name="vaccinationStatus" value="notVaccinated" required>
+        <label for="notVaccinated">Not Vaccinated</label><br>
+        <input type="radio" id="nUnknown" name="vaccinationStatus" value="Unknown" required>
+        <label for="Unknown">Unknown</label><br><br><br>
+        <button type="submit" id="button">SUBMIT</button>
+    </form>
+    
+</body>
+{% endblock %}
+</html>

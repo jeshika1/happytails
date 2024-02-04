@@ -1,0 +1,70 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}about us {% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}  
+{% block body%}
+<body>
+  
+    <div class="container">
+        <div class="card">
+            <div class="inner" id="card">
+                <div class="card-front">
+                    <h1><b>ABOUT US</b></h1>
+                    <section id="about">
+                        <h2>About Us</h2>
+                        <p>Welcome to Happy Tails Pet Adoption, where every tail has a tale to tell! We are a passionate team of a
+                            nimal lovers dedicated to making a positive difference in the lives of pets and the families that welcome them 
+                            into their homes. Our mission is simple yet profound: to rescue, rehabilitate, and rehome animals in need, one paw at a time.</p>
+                    </section>
+                
+                    <section id="story">
+                        <h2>Our Story</h2>
+                        <p>Happy Tails was founded in [2023] by a group of like-minded individuals who shared a common vision - a world where 
+                            every pet has a loving forever home. We embarked on this journey fueled by a deep sense of responsibility toward animals
+                            , knowing that we had the power to change lives. Over the years, our organization has grown, but our commitment to
+                             our furry friends remains unwavering.</p>
+                    </section>
+                
+                    <section id="mission">
+                        <h2>Our Mission</h2>
+                        <p>At Happy Tils, we believe that every animal deserves a second chance. Our dedicated team of volunteers and staff 
+                            work tirelessly to rescue pets from shelters, abusive situations, and neglect, providing them with the care and love they
+                             deserve. We focus not only on physical rehabilitation but also on nurturing their emotional well-being, ensuring they
+                              are ready to become cherished members of a new family.</p>
+                    </section>
+                    
+                        <section id="our-impact">
+                            <h2>Our Impact</h2>
+                            <p>Since our inception, we have successfully placed countless pets into loving homes, witnessing heartwarming transformations
+                                 along the way. Our success stories are a testament
+                                 to the power of love and compassion.</p>
+                        </section>
+                        
+                        <section id="get-involved">
+                            <h2>Get Involved</h2>
+                            <p>
+                                Paws of Hope Pet Adoption relies on the support of generous donors, volunteers, and advocates like you. There are
+                                 many ways to get involved, from making a donation to fostering 
+                                a pet in need. Together, we can continue to change lives and make the world a better place for animals.
+                                <br><br>
+                            </p>
+                        </section>
+                        
+                        <section id="contact-us">
+                            <h2>Contact Us</h2>
+                            <p>
+                                We would love to hear from you! Whether you have questions, want to adopt, volunteer, or support our cause, please don't 
+                                hesitate to reach out. Visit our 
+                                <a href="/contact">Contact Page</a> for all the ways to get in touch.
+                            </p>
+                        </section>
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
+</html>

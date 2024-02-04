@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+</head>
+<body>
+<div class="main">
+    {% if animal %}
+    <h2>Search Results for "{{ search }}"</h2> 
+    <ul>
+         {% for animal_instance in animal %}
+        <li>
+            <img class="animal-image"  src="{{ animal_instance.image.url }}" alt="{{ animal_instance.name }} Image">
+            <h3>{{ animal_instance.name }}</h3>
+            <p>{{ animal_instance.description }}</p>
+            <a href="{% url 'form' %}?animal_id={{ animal_instance.id }}" class="btn-adopt">Adopt</a>
+
+        </li>
+        <!-- Add other fields as needed -->
+         {% endfor %}
+    </ul>
+    <div class="pagination">
+         <span class="step-links">
+             {% if animal.has_previous %}
+             <a href="?page=1">&laquo; first</a>
+             <a href="?page={{ animal.previous_page_number }}">previous</a>
+             {% endif %}
+             <span class="current">
+                Page {{ animal.number }} of {{ animal.paginator.num_pages }}.
+              </span>
+              
+              {% if animal.has_next %}
+              <a href="?page={{ animal.next_page_number }}">next</a>
+               <a href="?page={{ animal.paginator.num_pages }}">last &raquo;</a>
+               {% endif %}
+         </span>
+    </div>
+    {% else %}
+    {% if search %}
+    <p>No results found for "{{ search }}".</p>
+    {% else %}
+    <p>Please enter a search query.</p>
+    {% endif %}
+    {% endif %}
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Happytails {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/page.css' %}">
+    {% block extra_css %}  {% endblock %}
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+  <div class="cont">
+    <div class="navbar">
+        <img src="{% static 'image/logo.png' %}" alt="noimg" class="logo-iamge">
+        <b style="font-size: 30px;">HAPPY <BR>TAILS</b> 
+        </BR>
+        <nav>
+            <ul id="menulist">
+                <li> <ul id="menulist">
+                    <div class="search-container">
+                          
+                    </div></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/addyour">Add your's</a></li>
+                <li><a href="/">Log Out</a></li>
+            </ul>
+        </nav>
+    </div>
+  </div>
+  {% block body %}  {% endblock %}

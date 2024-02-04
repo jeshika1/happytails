@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>Happytails</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="{% static 'image/logo.png' %}" alt="noimg" class="logo-iamge">
+            <b style="font-size: 30px;">HAPPY <BR>TAILS</b> 
+            </BR>
+            <nav>
+                <ul id="menulist">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/addyour">Add your's</a></li>
+                </ul>
+            </nav>
+            <img src="{% static 'image/menu1.png' %}" alt="noimg" class="menu-image" onclick="togglemenu()">
+        </div>
+
+        <div class="row">
+            <div class="col-1">
+                <h2>HAPPY <br> TAILS</h2>
+                <h3>Where Tails Never Stop Wagging</h3>
+                <button type="button" id="findOneButton">LOGIN</button>
+                <button type="button" id="findOne">SIGN UP</button>
+            </div>
+            <div class="col-2">
+                <img src="{% static 'image/dog.png' %}" alt="" class="dog">
+                <div class="colorbox"></div>
+                <div class="slogan">
+                    <p>Find your forever friend </p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="social">
+            <img src="{% static 'image/fb.png' %}" alt="">
+            <img src="{% static 'image/ig.png' %}" alt="">
+        </div>
+    </div>
+    <script>
+        var menulist = document.getElementById("menulist");
+
+        menulist.style.maxHeight = "0px";
+
+        function togglemenu(){
+            if(menulist.style.maxHeight == "0px")
+                {
+                    menulist.style.maxHeight = "130px";            
+                }
+            else
+            {
+                menulist.style.maxHeight="0px";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var findOneButton = document.getElementById("findOneButton");
+        
+            if (findOneButton) {
+                findOneButton.addEventListener("click", function () {
+                   window.location.href = "{% url 'login' %}";
+                });
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var findOneButton = document.getElementById("findOne");
+        
+            if (findOneButton) {
+                findOneButton.addEventListener("click", function () {
+                   window.location.href = "{% url 'signup' %}";
+                });
+            }
+        });
+        
+    </script>
+</body>
+</html>

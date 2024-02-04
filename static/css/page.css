@@ -1,0 +1,143 @@
+/* Reset some default styles */
+body, h1, p, input {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .cont {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .logo-iamge {
+    width: 60px;
+  }
+  
+  #menulist {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  #menulist li {
+    margin-right: 20px;
+  }
+  
+  #menulist a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+  }
+  
+  .search-container {
+    margin-left: auto;
+    text-align: right;
+    padding-left: 20px;
+    padding-right: 390px;
+  }
+  
+  .search-bar {
+    display: flex;
+    max-width: 300px;
+    align-items: center; 
+    /* Set a maximum width for the search bar */
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .search-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    align-items: center;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.pet-card {
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+}
+
+.animal-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    background-color: #636363;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px; /* Add some space between the image and the button */
+}
+
+.adopt-button {
+    background-color: #313a32;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+  
+  #form {
+    background-color: #4CAF50;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Center the "Find Your Friends" heading */
+  h2 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Move "Happy Tails" text to the side of the logo */
+  b {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    /* Adjustments for smaller screens if needed */
+    .search-container {
+      text-align: center;
+    }
+  
+    .search-bar {
+      max-width: none;
+    }
+  }
+  

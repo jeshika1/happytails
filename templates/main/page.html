@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happytails</title>
+    <link rel="stylesheet" href="{% static 'css/page.css' %}">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+  <div class="cont">
+    <div class="navbar">
+        <img src="{% static 'image/logo.png' %}" alt="noimg" class="logo-iamge">
+        <b style="font-size: 30px;">HAPPY <BR>TAILS</b> 
+        </BR>
+        <nav>
+            <ul id="menulist">
+                <li> <ul id="menulist">
+                    <div class="search-container">
+                          <form  method="get" action="{% url 'linear_search' %}">
+                            <div class="search-bar">
+                              <input type="text" class="search-input" name="q" placeholder="Search..."> 
+                               <button class="search-button">Search</button>
+                            </div>
+                          </form>
+                    </div></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/addyour">Add your's</a></li>
+                <li><a href="/">Log Out</a></li>
+            </ul>
+        </nav>
+    </div>
+  </div>
+  <h2> -FIND YOUR FRIEND-</h2><br>
+  <div class="container">
+     <div class="pet-card">
+        {% for animal in animals %}
+            <img class="animal-image" src="{{ animal.image.url }}" alt="{{ animal.title }}">
+            <button id="form" class ="adopt-button" onclick="adoptAnimal('{{ animal.id }}')">Adopt</button>
+        {% endfor %}
+     </div>
+  </div>
+  <script>
+    function adoptAnimal(animalId) {
+        // You can use JavaScript to navigate to the form page with the specific animal ID
+        window.location.href = "{% url 'form' %}?animal_id=" + animalId;
+    }
+</script>
+</div>
+</body>
+</html>
